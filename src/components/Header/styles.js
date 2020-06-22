@@ -19,7 +19,7 @@ export const Title = styled.Text`
 export const DrawerButton = styled.TouchableOpacity.attrs({
     activeOpacity: 0.6,
 })`
-    width: 35;
+    width: 35px;
     height: 35px;
     margin-left: 15px;
 
