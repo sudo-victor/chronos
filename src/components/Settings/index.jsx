@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
+import formatsSeconds from "../../utils/formatsSeconds";
+
 import { Container, Header, SaveButton } from "./styles";
 import Field from "../Field";
 import SubmitButton from "../SubmitButton";
@@ -11,11 +13,11 @@ export default function Settings() {
     const [restTime, setRestTime] = useState(10);
 
     const formattedWorkTime = useMemo(() => {
-        return secondsToMinutes(workTime);
+        return formatsSeconds(workTime);
     }, [workTime]);
 
     const formattedRestTime = useMemo(() => {
-        return secondsToMinutes(restTime);
+        return formatsSeconds(restTime);
     }, [restTime]);
 
     function openModal() {
@@ -24,16 +26,6 @@ export default function Settings() {
 
     function closeModal() {
         setModalVisible(false);
-    }
-
-    // Converte os segundos no formato min:seg
-    function secondsToMinutes(value) {
-        const minutes = Math.floor(value / 60);
-        const seconds = value % 60;
-        const maskedMinutes = String(minutes).padStart(2, "0");
-        const maskedSeconds = String(seconds).padStart(2, "0");
-
-        return `${maskedMinutes}:${maskedSeconds}`;
     }
 
     return (
