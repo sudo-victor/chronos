@@ -3,6 +3,7 @@ import { FontAwesome } from "@expo/vector-icons";
 
 import { Container, Header, SaveButton } from "./styles";
 import Field from "../Field";
+import SubmitButton from "../SubmitButton";
 
 export default function Settings() {
     const [sets, setSets] = useState(3);
@@ -57,7 +58,7 @@ export default function Settings() {
                 setValue={setRestTime}
             />
 
-            {/* <SubmitButton text="Iniciar" func={() => {}} /> */}
+            <SubmitButton text="Iniciar" func={() => {}} />
         </Container>
     );
 }
