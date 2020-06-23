@@ -31,7 +31,7 @@ function List() {
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="ListItems" component={ListScreen} />
+            <Stack.Screen name="List Items" component={ListScreen} />
             <Stack.Screen name="Single Item" component={SingleItemScreen} />
         </Stack.Navigator>
     );

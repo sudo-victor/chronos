@@ -13,7 +13,15 @@ export const Header = styled.View`
     align-items: flex-end;
 `;
 
-export const SaveButton = styled.TouchableOpacity.attrs({
+export const ButtonContainer = styled.View`
+    width: 60px;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const Button = styled.TouchableOpacity.attrs({
     activeOpacity: 0.7,
 })``;
 

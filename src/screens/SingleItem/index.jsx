@@ -11,11 +11,13 @@ export default function SingleItem() {
 
     return (
         <Container>
-            <Header title={item.name} isStack screenName="ListItems" />
+            <Header title={item.name} isStack screenName="List Items" />
             <Settings
                 preSets={item.sets}
                 preWorkTime={item.workTime}
                 preRestTime={item.restTime}
+                idItem={item.id}
+                isSingleItem
             />
         </Container>
     );
