@@ -46,7 +46,7 @@ export default function Settings() {
                 setValue={setWorkTime}
             />
             <Field
-                title="tempo de trabalho"
+                title="tempo de espera"
                 formattedValue={formattedRestTime}
                 value={restTime}
                 setValue={setRestTime}

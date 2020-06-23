@@ -1,3 +1,5 @@
+let newState;
+
 export default function configList(state = [], action) {
     switch (action.type) {
         case "ADD_CONFIG":
@@ -11,6 +13,14 @@ export default function configList(state = [], action) {
                     restTime: action.payload.restTime,
                 },
             ];
+
+        case "DESTROY_CONFIG":
+            newState = [...state];
+            const filteredState = newState.filter(
+                (item) => item.id !== action.payload.id
+            );
+
+            return filteredState;
 
         default:
             return state;

@@ -32,6 +32,7 @@ export default function Modal({ modalVisible, closeModal, item }) {
 
         dispatch({ type: "ADD_CONFIG", payload: objConfig });
         alert("salvou");
+        setInputValue("");
         closeModal();
     }
 
