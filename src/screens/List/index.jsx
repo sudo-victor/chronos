@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import Header from "../../components/Header";
@@ -15,9 +16,14 @@ import {
 export default function List() {
     const items = useSelector((state) => state.configList);
     const dispatch = useDispatch();
+    const navigation = useNavigation();
 
     function handleDestroy(id) {
         dispatch({ type: "DESTROY_CONFIG", payload: { id } });
+    }
+
+    function gotToSingle(item) {
+        navigation.navigate("Single Item", { item });
     }
 
     return (
@@ -26,7 +32,10 @@ export default function List() {
 
             <ListContainer>
                 {items.map((item) => (
-                    <Item key={String(item.id)}>
+                    <Item
+                        key={String(item.id)}
+                        onPress={() => gotToSingle(item)}
+                    >
                         <TextItem>{item.name}</TextItem>
 
                         <DeleteButton onPress={() => handleDestroy(item.id)}>

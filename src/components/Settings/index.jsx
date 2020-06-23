@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
 import formatsSeconds from "../../utils/formatsSeconds";
@@ -8,11 +8,23 @@ import Field from "../Field";
 import Modal from "../Modal";
 import SubmitButton from "../SubmitButton";
 
-export default function Settings() {
+export default function Settings({ preSets, preWorkTime, preRestTime }) {
     const [sets, setSets] = useState(3);
-    const [workTime, setWorkTime] = useState(30);
+    const [workTime, setWorkTime] = useState(15);
     const [restTime, setRestTime] = useState(10);
     const [modalVisible, setModalVisible] = useState(10);
+
+    useEffect(() => {
+        function loadPreConfig() {
+            if (preSets && preWorkTime && preRestTime) {
+                setSets(preSets);
+                setWorkTime(preWorkTime);
+                setRestTime(preRestTime);
+            }
+        }
+
+        loadPreConfig();
+    }, []);
 
     const formattedWorkTime = useMemo(() => {
         return formatsSeconds(workTime);

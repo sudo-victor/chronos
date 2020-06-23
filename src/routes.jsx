@@ -5,12 +5,13 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import ChronosScreen from "./screens/Chronos";
 import ListScreen from "./screens/List";
+import SingleItemScreen from "./screens/SingleItem";
 import TimerScreen from "./screens/Chronos";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-function HomeScreen() {
+function Home() {
     return (
         <Stack.Navigator
             screenOptions={{
@@ -23,12 +24,25 @@ function HomeScreen() {
     );
 }
 
+function List() {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <Stack.Screen name="ListItems" component={ListScreen} />
+            <Stack.Screen name="Single Item" component={SingleItemScreen} />
+        </Stack.Navigator>
+    );
+}
+
 export default function Routes() {
     return (
         <NavigationContainer>
             <Drawer.Navigator>
-                <Drawer.Screen name="Home" Screen component={HomeScreen} />
-                <Drawer.Screen name="List" Screen component={ListScreen} />
+                <Drawer.Screen name="Home" Screen component={Home} />
+                <Drawer.Screen name="List" Screen component={List} />
             </Drawer.Navigator>
         </NavigationContainer>
     );
