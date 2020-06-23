@@ -16,7 +16,7 @@ export const Title = styled.Text`
     color: #333;
 `;
 
-export const DrawerButton = styled.TouchableOpacity.attrs({
+export const Button = styled.TouchableOpacity.attrs({
     activeOpacity: 0.6,
 })`
     width: 35px;

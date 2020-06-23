@@ -11,7 +11,7 @@ export default function SingleItem() {
 
     return (
         <Container>
-            <Header title={item.name} />
+            <Header title={item.name} isStack screenName="ListItems" />
             <Settings
                 preSets={item.sets}
                 preWorkTime={item.workTime}

@@ -28,7 +28,7 @@ export default function List() {
 
     return (
         <Container>
-            <Header title="Lista" hasDrawer />
+            <Header title="Lista" isDrawer />
 
             <ListContainer>
                 {items.map((item) => (
