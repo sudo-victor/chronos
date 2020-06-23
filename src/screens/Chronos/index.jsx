@@ -7,7 +7,7 @@ import Settings from "../../components/Settings";
 export default function Chronos() {
     return (
         <Container>
-            <Header title="Chronos" isDrawer />
+            <Header title="Home" isDrawer />
             <Settings />
         </Container>
     );
