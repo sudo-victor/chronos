@@ -52,7 +52,12 @@ export default function Settings({
         setModalVisible(false);
     }
 
-    function handleEdit() {}
+    function handleEdit() {
+        dispatch({
+            type: "UPDATE_CONFIG",
+            payload: { id: idItem, sets, workTime, restTime },
+        });
+    }
 
     function handleDestroy() {
         dispatch({ type: "DESTROY_CONFIG", payload: { id: idItem } });
