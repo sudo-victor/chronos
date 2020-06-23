@@ -5,12 +5,14 @@ import formatsSeconds from "../../utils/formatsSeconds";
 
 import { Container, Header, SaveButton } from "./styles";
 import Field from "../Field";
+import Modal from "../Modal";
 import SubmitButton from "../SubmitButton";
 
 export default function Settings() {
     const [sets, setSets] = useState(3);
     const [workTime, setWorkTime] = useState(30);
     const [restTime, setRestTime] = useState(10);
+    const [modalVisible, setModalVisible] = useState(10);
 
     const formattedWorkTime = useMemo(() => {
         return formatsSeconds(workTime);
@@ -31,7 +33,7 @@ export default function Settings() {
     return (
         <Container>
             <Header>
-                <SaveButton onPress={() => {}}>
+                <SaveButton onPress={openModal}>
                     <FontAwesome name="save" size={25} color="#FFBF00" />
                 </SaveButton>
             </Header>
@@ -50,7 +52,18 @@ export default function Settings() {
                 setValue={setRestTime}
             />
 
-            <SubmitButton text="Iniciar" func={() => {}} />
+            <Modal
+                modalVisible={modalVisible}
+                closeModal={closeModal}
+                item={{ sets, workTime, restTime }}
+            />
+
+            <SubmitButton
+                text="Iniciar"
+                func={() => {
+                    alert("oi");
+                }}
+            />
         </Container>
     );
 }
