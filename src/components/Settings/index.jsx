@@ -57,6 +57,7 @@ export default function Settings({
             type: "UPDATE_CONFIG",
             payload: { id: idItem, sets, workTime, restTime },
         });
+        alert("salvo");
     }
 
     function handleDestroy() {
