@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
-// import { useDispatch } from "react-redux";
-
-import SubmitButton from "../SubmitButton";
+import { useDispatch } from "react-redux";
 
 import {
     ModalContainer,
@@ -18,7 +16,7 @@ import {
 
 export default function Modal({ modalVisible, closeModal, item }) {
     const [inputValue, setInputValue] = useState("");
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     function handleAddConfig() {
         if (inputValue === "") {
@@ -32,7 +30,9 @@ export default function Modal({ modalVisible, closeModal, item }) {
             restTime: item.restTime,
         };
 
-        console.log(obj);
+        dispatch({ type: "ADD_CONFIG", payload: objConfig });
+        alert("salvou");
+        closeModal();
     }
 
     function handleBack() {
