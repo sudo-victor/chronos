@@ -7,10 +7,12 @@ import ChronosScreen from "./screens/Chronos";
 import ListScreen from "./screens/List";
 import SingleItemScreen from "./screens/SingleItem";
 import TimerScreen from "./screens/Chronos";
+import DrawerContent from "./screens/DrawerContent";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
+// Stack---------------------
 function Home() {
     return (
         <Stack.Navigator
@@ -37,10 +39,13 @@ function List() {
     );
 }
 
+// Drawer--------------------
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator>
+            <Drawer.Navigator
+                drawerContent={(props) => <DrawerContent {...props} />}
+            >
                 <Drawer.Screen name="Home" Screen component={Home} />
                 <Drawer.Screen name="List" Screen component={List} />
             </Drawer.Navigator>
