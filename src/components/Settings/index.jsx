@@ -52,6 +52,15 @@ export default function Settings({
         setModalVisible(false);
     }
 
+    function gotToTimer() {
+        const item = {
+            sets,
+            workTime,
+            restTime,
+        };
+        navigation.navigate("Timer", { item });
+    }
+
     function handleEdit() {
         dispatch({
             type: "UPDATE_CONFIG",
@@ -112,12 +121,7 @@ export default function Settings({
                 item={{ sets, workTime, restTime }}
             />
 
-            <SubmitButton
-                text="Iniciar"
-                func={() => {
-                    alert("oi");
-                }}
-            />
+            <SubmitButton text="Iniciar" func={gotToTimer} />
         </Container>
     );
 }

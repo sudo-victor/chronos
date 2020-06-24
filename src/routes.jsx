@@ -6,7 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import ChronosScreen from "./screens/Chronos";
 import ListScreen from "./screens/List";
 import SingleItemScreen from "./screens/SingleItem";
-import TimerScreen from "./screens/Chronos";
+import TimerScreen from "./screens/Timer";
 import DrawerContent from "./screens/DrawerContent";
 
 const Drawer = createDrawerNavigator();
