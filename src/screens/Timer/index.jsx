@@ -44,7 +44,7 @@ export default function Timer() {
     useEffect(() => {
         if (playing && currentValue > 0) {
             const time = setInterval(() => {
-                setProgress(progress - 100 / 15);
+                setProgress(progress + 100 / 15);
                 setCurrentValue(currentValue - 1);
             }, 1000);
 
@@ -79,14 +79,15 @@ export default function Timer() {
                     size={240}
                     width={9}
                     fill={progress}
-                    duration={300}
+                    duration={1000}
+                    easing={Easing.out()}
                     rotation={0}
                     tintColor="#333"
                     backgroundColor="#F9FBF2"
                 >
                     {() => (
                         <ContainerValue>
-                            <Value>{workTime}</Value>
+                            <Value>{currentValue}</Value>
                         </ContainerValue>
                     )}
                 </Progress>
@@ -95,8 +96,19 @@ export default function Timer() {
 
                 <ControlButton>
                     <ContainerButton>
-                        <Button onPress={handlePause}>
-                            <Ionicons name="ios-pause" size={20} color="#555" />
+                        <Button
+                            onPress={handlePause}
+                            style={{
+                                backgroundColor: playing
+                                    ? "#fafafa"
+                                    : "#DB5461",
+                            }}
+                        >
+                            <Ionicons
+                                name="ios-pause"
+                                size={20}
+                                color={playing ? "#555" : "#fafafa"}
+                            />
                         </Button>
                         <TextButton>pause</TextButton>
                     </ContainerButton>
