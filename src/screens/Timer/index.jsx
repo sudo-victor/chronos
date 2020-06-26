@@ -78,9 +78,8 @@ export default function Timer() {
             };
         }
 
-        if (currentValue === 0) {
+        if (playing === false) {
             if (sectionType === "espera") {
-                delay(5000);
                 setSectionType("tempo de trabalho");
             } else if (sectionType === "tempo de trabalho") {
                 setSectionType("tempo de descanso");
