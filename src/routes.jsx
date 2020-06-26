@@ -7,6 +7,7 @@ import ChronosScreen from "./screens/Chronos";
 import ListScreen from "./screens/List";
 import SingleItemScreen from "./screens/SingleItem";
 import TimerScreen from "./screens/Timer";
+import CongratsScreen from "./screens/Congrats";
 import DrawerContent from "./screens/DrawerContent";
 
 const Drawer = createDrawerNavigator();
@@ -22,6 +23,7 @@ function Home() {
         >
             <Stack.Screen name="Chronos" component={ChronosScreen} />
             <Stack.Screen name="Timer" component={TimerScreen} />
+            <Stack.Screen name="Congrats" component={CongratsScreen} />
         </Stack.Navigator>
     );
 }

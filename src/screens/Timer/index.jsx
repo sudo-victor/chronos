@@ -73,24 +73,32 @@ export default function Timer() {
     useEffect(() => {
         if (currentValue === 0 && progress === 100) {
             if (sectionType === "espera") {
-                console.log("acabou a espera");
-                setCurrentValue(workingTime);
-                setPercentage(workingTime);
-                setProgress(0);
-                setSectionType("tempo de trabalho");
+                alterSection(workingTime, "tempo de trabalho");
+
+                return;
             } else if (sectionType === "tempo de trabalho") {
-                console.log("acabou tempo de trabalho");
-                setCurrentValue(restingTime);
-                setPercentage(restingTime);
-                setProgress(0);
-                setSectionType("tempo de descanso");
+                alterSection(restingTime, "tempo de descanso");
+                setSets(sets - 1);
+
+                if (sets - 1 === 0) {
+                    setPlaying(false);
+                    navigation.navigate("Congrats");
+                }
+                return;
             } else if (sectionType === "tempo de descanso") {
-                console.log("acabou tempo de descanso");
-                setCurrentValue(workingTime);
-                setPercentage(workingTime);
-                setProgress(0);
-                setSectionType("tempo de trabalho");
+                alterSection(workingTime, "tempo de trabalho");
+
+                return;
             }
+        }
+
+        function alterSection(value, section) {
+            setCurrentValue(value);
+            setPercentage(value);
+            setProgress(0);
+            setSectionType(section);
+
+            return;
         }
 
         return;

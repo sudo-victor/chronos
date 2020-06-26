@@ -19,7 +19,7 @@ export default function Settings({
 }) {
     const [sets, setSets] = useState(3);
     const [workingTime, setWorkingTime] = useState(15);
-    const [restingTime, setRestingTime] = useState(10);
+    const [restingTime, setRestingTime] = useState(11);
     const [modalVisible, setModalVisible] = useState(10);
     const navigation = useNavigation();
     const dispatch = useDispatch();
