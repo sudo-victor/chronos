@@ -19,8 +19,8 @@ export default function Fields({ title, value, setValue, formattedValue }) {
     }
 
     function validationValue(value) {
-        if (value < 0) {
-            return 0;
+        if (value < 1) {
+            return 1;
         }
         return value;
     }
