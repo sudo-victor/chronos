@@ -104,15 +104,10 @@ export default function Timer() {
         return;
     }, [currentValue, progress]);
 
-    // formats the working time from seconds to minutes:seconds
-    const formattedWorkingTime = useMemo(() => {
-        return formatsSeconds(workingTime);
-    }, [workingTime]);
-
-    // formats the resting time from seconds to minutes:seconds
-    const formattedRestingTime = useMemo(() => {
-        return formatsSeconds(restingTime);
-    }, [restingTime]);
+    // formats the current value from seconds to minutes:seconds
+    const formattedCurrentValue = useMemo(() => {
+        return formatsSeconds(currentValue);
+    }, [currentValue]);
 
     const handlePause = useCallback(() => setPlaying(!playing), [playing]);
 
@@ -138,7 +133,7 @@ export default function Timer() {
                 >
                     {() => (
                         <ContainerValue>
-                            <Value>{currentValue}</Value>
+                            <Value>{formattedCurrentValue}</Value>
                         </ContainerValue>
                     )}
                 </Progress>
