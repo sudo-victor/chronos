@@ -14,8 +14,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
     font-size: 22px;
     font-weight: bold;
-    /* color: #8b80f9; */
-    color: #000;
+    color: #333;
 `;
 
 export const Button = styled.TouchableOpacity.attrs({
