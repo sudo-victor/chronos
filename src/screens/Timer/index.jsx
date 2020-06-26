@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
-import { Easing } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
@@ -24,10 +23,11 @@ export default function Timer() {
     const [sets, setSets] = useState(0);
     const [workTime, setWorkTime] = useState(0);
     const [restTime, setRestTime] = useState(0);
+    const [awaitTime, setAwaitTime] = useState(5);
     const [progress, setProgress] = useState(0);
     const [percentage, setPercentage] = useState(0);
     const [sectionType, setSectionType] = useState("espera");
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
     const [currentValue, setCurrentValue] = useState(0);
     const navigation = useNavigation();
     const route = useRoute();
@@ -38,35 +38,14 @@ export default function Timer() {
             setSets(item.sets);
             setWorkTime(item.workTime);
             setRestTime(item.restTime);
+            setCurrentValue(awaitTime);
+            setPercentage(awaitTime);
         }
 
         loadValues();
     }, []);
 
     useEffect(() => {
-        if (sectionType === "espera" && !playing) {
-            setCurrentValue(5);
-            setPercentage(5);
-            setPlaying(true);
-        } else if (
-            sectionType === "tempo de trabalho" &&
-            !playing &&
-            sets > 0
-        ) {
-            setCurrentValue(workTime);
-            setPercentage(workTime);
-            setPlaying(true);
-        } else if (
-            sectionType === "tempo de descanso" &&
-            !playing &&
-            sets > 0
-        ) {
-            setCurrentValue(restTime);
-            setPercentage(restTime);
-            setSets(sets - 1);
-            setPlaying(true);
-        }
-
         if (playing && currentValue > 0 && percentage > 0) {
             const time = setInterval(() => {
                 setProgress(progress + 100 / percentage);
@@ -77,17 +56,7 @@ export default function Timer() {
                 clearInterval(time);
             };
         }
-
-        if (playing === false) {
-            if (sectionType === "espera") {
-                setSectionType("tempo de trabalho");
-            } else if (sectionType === "tempo de trabalho") {
-                setSectionType("tempo de descanso");
-            } else if (sectionType === "tempo de descanso") {
-                setSectionType("tempo de trabalho");
-            }
-        }
-    }, [playing, currentValue, workTime, sectionType, sets]);
+    }, [playing, currentValue, sets]);
 
     const formattedWorkTime = useMemo(() => {
         return formatsSeconds(workTime);
@@ -104,7 +73,7 @@ export default function Timer() {
     }
 
     return (
-        <Container>
+        <Container section={sectionType}>
             <Header title="Timer" />
 
             <Content>

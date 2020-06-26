@@ -4,9 +4,15 @@ import { AnimatedCircularProgress } from "react-native-circular-progress";
 export const Container = styled.View`
     flex: 1;
 
-    background-color: #ffbf00;
-    /* background-color: #8b80f9; */
-    /* background-color: #7ac9b5; */
+    background-color: ${(props) => {
+        if (props.section === "espera") {
+            return "#FFBF00";
+        } else if (props.section === "tempo de trabalho") {
+            return "#8b80f9";
+        } else if (props.section === "tempo de descanso") {
+            return "#7ac9b5";
+        }
+    }};
 `;
 
 export const Content = styled.View`
