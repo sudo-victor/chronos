@@ -21,55 +21,95 @@ import Header from "../../components/Header";
 
 export default function Timer() {
     const [sets, setSets] = useState(0);
-    const [workTime, setWorkTime] = useState(0);
-    const [restTime, setRestTime] = useState(0);
-    const [awaitTime, setAwaitTime] = useState(5);
+    const [workingTime, setWorkingTime] = useState(0);
+    const [restingTime, setRestingTime] = useState(0);
+    const [awaitingTime, setAwaitingTime] = useState(5);
     const [progress, setProgress] = useState(0);
     const [percentage, setPercentage] = useState(0);
     const [sectionType, setSectionType] = useState("espera");
     const [playing, setPlaying] = useState(true);
-    const [currentValue, setCurrentValue] = useState(0);
+    const [currentValue, setCurrentValue] = useState(null);
     const navigation = useNavigation();
     const route = useRoute();
     const item = route.params.item;
 
+    // start values
     useEffect(() => {
         function loadValues() {
             setSets(item.sets);
-            setWorkTime(item.workTime);
-            setRestTime(item.restTime);
-            setCurrentValue(awaitTime);
-            setPercentage(awaitTime);
+            setWorkingTime(item.workingTime);
+            setRestingTime(item.restingTime);
+            setCurrentValue(awaitingTime);
+            setPercentage(awaitingTime);
         }
 
         loadValues();
     }, []);
 
+    // chronometer
     useEffect(() => {
         if (playing && currentValue > 0 && percentage > 0) {
             const time = setInterval(() => {
-                setProgress(progress + 100 / percentage);
+                setProgress(validateProgress(progress + 100 / percentage));
                 setCurrentValue(currentValue - 1);
-            }, 1000);
+            }, 950);
 
             return () => {
                 clearInterval(time);
             };
         }
-    }, [playing, currentValue, sets]);
 
-    const formattedWorkTime = useMemo(() => {
-        return formatsSeconds(workTime);
-    }, [workTime]);
+        // don't let progress exceed 100
+        function validateProgress(value) {
+            if (value >= 100) {
+                return 100;
+            }
 
-    const formattedRestTime = useMemo(() => {
-        return formatsSeconds(restTime);
-    }, [restTime]);
+            return value;
+        }
+    }, [playing, currentValue, percentage]);
+
+    // section change
+    useEffect(() => {
+        if (currentValue === 0 && progress === 100) {
+            if (sectionType === "espera") {
+                console.log("acabou a espera");
+                setCurrentValue(workingTime);
+                setPercentage(workingTime);
+                setProgress(0);
+                setSectionType("tempo de trabalho");
+            } else if (sectionType === "tempo de trabalho") {
+                console.log("acabou tempo de trabalho");
+                setCurrentValue(restingTime);
+                setPercentage(restingTime);
+                setProgress(0);
+                setSectionType("tempo de descanso");
+            } else if (sectionType === "tempo de descanso") {
+                console.log("acabou tempo de descanso");
+                setCurrentValue(workingTime);
+                setPercentage(workingTime);
+                setProgress(0);
+                setSectionType("tempo de trabalho");
+            }
+        }
+
+        return;
+    }, [currentValue, progress]);
+
+    // formats the working time from seconds to minutes:seconds
+    const formattedWorkingTime = useMemo(() => {
+        return formatsSeconds(workingTime);
+    }, [workingTime]);
+
+    // formats the resting time from seconds to minutes:seconds
+    const formattedRestingTime = useMemo(() => {
+        return formatsSeconds(restingTime);
+    }, [restingTime]);
 
     const handlePause = useCallback(() => setPlaying(!playing), [playing]);
 
     function handleCancel() {
-        navigation.navigate("Chronos");
+        navigation.goBack();
     }
 
     return (
@@ -83,7 +123,7 @@ export default function Timer() {
                     size={240}
                     width={9}
                     fill={progress}
-                    duration={100}
+                    duration={0}
                     rotation={0}
                     tintColor="#333"
                     backgroundColor="#F9FBF2"

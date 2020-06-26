@@ -12,37 +12,37 @@ import SubmitButton from "../SubmitButton";
 
 export default function Settings({
     preSets,
-    preWorkTime,
-    preRestTime,
+    preWorkingTime,
+    preRestingTime,
     isSingleItem,
     idItem,
 }) {
     const [sets, setSets] = useState(3);
-    const [workTime, setWorkTime] = useState(15);
-    const [restTime, setRestTime] = useState(10);
+    const [workingTime, setWorkingTime] = useState(15);
+    const [restingTime, setRestingTime] = useState(10);
     const [modalVisible, setModalVisible] = useState(10);
     const navigation = useNavigation();
     const dispatch = useDispatch();
 
     useEffect(() => {
         function loadPreConfig() {
-            if (preSets && preWorkTime && preRestTime) {
+            if (preSets && preWorkingTime && preRestingTime) {
                 setSets(preSets);
-                setWorkTime(preWorkTime);
-                setRestTime(preRestTime);
+                setWorkingTime(preWorkingTime);
+                setRestingTime(preRestingTime);
             }
         }
 
         loadPreConfig();
     }, []);
 
-    const formattedWorkTime = useMemo(() => {
-        return formatsSeconds(workTime);
-    }, [workTime]);
+    const formattedWorkingTime = useMemo(() => {
+        return formatsSeconds(workingTime);
+    }, [workingTime]);
 
-    const formattedRestTime = useMemo(() => {
-        return formatsSeconds(restTime);
-    }, [restTime]);
+    const formattedRestingTime = useMemo(() => {
+        return formatsSeconds(restingTime);
+    }, [restingTime]);
 
     function openModal() {
         setModalVisible(true);
@@ -55,8 +55,8 @@ export default function Settings({
     function gotToTimer() {
         const item = {
             sets,
-            workTime,
-            restTime,
+            workingTime,
+            restingTime,
         };
         navigation.navigate("Timer", { item });
     }
@@ -64,7 +64,7 @@ export default function Settings({
     function handleEdit() {
         dispatch({
             type: "UPDATE_CONFIG",
-            payload: { id: idItem, sets, workTime, restTime },
+            payload: { id: idItem, sets, workingTime, restingTime },
         });
         alert("salvo");
     }
@@ -104,21 +104,21 @@ export default function Settings({
             <Field title="séries" value={sets} setValue={setSets} />
             <Field
                 title="tempo de trabalho"
-                formattedValue={formattedWorkTime}
-                value={workTime}
-                setValue={setWorkTime}
+                formattedValue={formattedWorkingTime}
+                value={workingTime}
+                setValue={setWorkingTime}
             />
             <Field
-                title="tempo de espera"
-                formattedValue={formattedRestTime}
-                value={restTime}
-                setValue={setRestTime}
+                title="tempo de descanso"
+                formattedValue={formattedRestingTime}
+                value={restingTime}
+                setValue={setRestingTime}
             />
 
             <Modal
                 modalVisible={modalVisible}
                 closeModal={closeModal}
-                item={{ sets, workTime, restTime }}
+                item={{ sets, workingTime, restingTime }}
             />
 
             <SubmitButton text="Iniciar" func={gotToTimer} />

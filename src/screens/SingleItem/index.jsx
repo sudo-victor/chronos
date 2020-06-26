@@ -14,8 +14,8 @@ export default function SingleItem() {
             <Header title={item.name} isStack screenName="List Items" />
             <Settings
                 preSets={item.sets}
-                preWorkTime={item.workTime}
-                preRestTime={item.restTime}
+                preWorkingTime={item.workTime}
+                preRestingTime={item.restTime}
                 idItem={item.id}
                 isSingleItem
             />
