@@ -8,7 +8,7 @@ export default function Chronos() {
     return (
         <Container>
             <Header title="Home" isDrawer />
-            <Settings />
+            <Settings previusPage="Chronos" />
         </Container>
     );
 }

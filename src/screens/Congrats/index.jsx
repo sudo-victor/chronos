@@ -1,14 +1,16 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import { Container, Content, Title, Text } from "./styles";
 import SubmitButton from "../../components/SubmitButton";
 
 export default function Congrats() {
     const navigation = useNavigation();
+    const route = useRoute();
+    const previusPage = route.params.previusPage;
 
     function handleBack() {
-        navigation.navigate("Chronos");
+        navigation.navigate(previusPage);
     }
 
     return (

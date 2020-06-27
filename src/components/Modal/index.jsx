@@ -26,8 +26,8 @@ export default function Modal({ modalVisible, closeModal, item }) {
         let objConfig = {
             name: inputValue,
             sets: item.sets,
-            workTime: item.workingTime,
-            restTime: item.restingTime,
+            workingTime: item.workingTime,
+            restingTime: item.restingTime,
         };
 
         dispatch({ type: "ADD_CONFIG", payload: objConfig });

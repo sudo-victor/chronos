@@ -9,8 +9,8 @@ export default function configList(state = [], action) {
                     id: Math.random(),
                     name: action.payload.name,
                     sets: action.payload.sets,
-                    workTime: action.payload.workTime,
-                    restTime: action.payload.restTime,
+                    workingTime: action.payload.workingTime,
+                    restingTime: action.payload.restingTime,
                 },
             ];
 
@@ -29,8 +29,8 @@ export default function configList(state = [], action) {
                         id: item.id,
                         name: item.name,
                         sets: action.payload.sets,
-                        workTime: action.payload.workTime,
-                        restTime: action.payload.restTime,
+                        workingTime: action.payload.workingTime,
+                        restingTime: action.payload.restingTime,
                     };
 
                     return newItem;

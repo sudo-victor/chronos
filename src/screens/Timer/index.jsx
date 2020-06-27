@@ -32,6 +32,7 @@ export default function Timer() {
     const navigation = useNavigation();
     const route = useRoute();
     const item = route.params.item;
+    const previusPage = route.params.previusPage;
 
     // start values
     useEffect(() => {
@@ -82,7 +83,7 @@ export default function Timer() {
 
                 if (sets - 1 === 0) {
                     setPlaying(false);
-                    navigation.navigate("Congrats");
+                    navigation.navigate("Congrats", { previusPage });
                 }
                 return;
             } else if (sectionType === "tempo de descanso") {

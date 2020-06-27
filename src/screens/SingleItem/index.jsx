@@ -14,10 +14,11 @@ export default function SingleItem() {
             <Header title={item.name} isStack screenName="List Items" />
             <Settings
                 preSets={item.sets}
-                preWorkingTime={item.workTime}
-                preRestingTime={item.restTime}
+                preWorkingTime={item.workingTime}
+                preRestingTime={item.restingTime}
                 idItem={item.id}
                 isSingleItem
+                previusPage="List Items"
             />
         </Container>
     );

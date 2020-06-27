@@ -16,6 +16,7 @@ export default function Settings({
     preRestingTime,
     isSingleItem,
     idItem,
+    previusPage,
 }) {
     const [sets, setSets] = useState(3);
     const [workingTime, setWorkingTime] = useState(15);
@@ -58,7 +59,7 @@ export default function Settings({
             workingTime,
             restingTime,
         };
-        navigation.navigate("Timer", { item });
+        navigation.navigate("Timer", { item, previusPage });
     }
 
     function handleEdit() {
