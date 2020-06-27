@@ -25,7 +25,7 @@ export default function DrawerContent(props) {
                             )}
                             label="Home"
                             onPress={() => {
-                                props.navigation.navigate("Home");
+                                props.navigation.navigate("Chronos");
                             }}
                         />
                     </Drawer.Section>
@@ -41,7 +41,7 @@ export default function DrawerContent(props) {
                             )}
                             label="Lista"
                             onPress={() => {
-                                props.navigation.navigate("List");
+                                props.navigation.navigate("List Items");
                             }}
                         />
                     </Drawer.Section>

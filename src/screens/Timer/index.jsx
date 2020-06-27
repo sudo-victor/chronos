@@ -116,7 +116,7 @@ export default function Timer() {
     const handlePause = useCallback(() => setPlaying(!playing), [playing]);
 
     function handleCancel() {
-        navigation.goBack();
+        navigation.navigate(previusPage);
     }
 
     return (

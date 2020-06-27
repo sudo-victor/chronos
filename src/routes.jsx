@@ -13,44 +13,30 @@ import DrawerContent from "./screens/DrawerContent";
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-// Stack---------------------
-function Home() {
+function HasMenu() {
     return (
-        <Stack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
+        <Drawer.Navigator
+            drawerContent={(props) => <DrawerContent {...props} />}
         >
             <Stack.Screen name="Chronos" component={ChronosScreen} />
-            <Stack.Screen name="Timer" component={TimerScreen} />
-            <Stack.Screen name="Congrats" component={CongratsScreen} />
-        </Stack.Navigator>
-    );
-}
-
-function List() {
-    return (
-        <Stack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
-        >
             <Stack.Screen name="List Items" component={ListScreen} />
-            <Stack.Screen name="Single Item" component={SingleItemScreen} />
-        </Stack.Navigator>
+        </Drawer.Navigator>
     );
 }
 
-// Drawer--------------------
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator
-                drawerContent={(props) => <DrawerContent {...props} />}
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
             >
-                <Drawer.Screen name="Home" Screen component={Home} />
-                <Drawer.Screen name="List" Screen component={List} />
-            </Drawer.Navigator>
+                <Stack.Screen name="hasMenu" component={HasMenu} />
+                <Stack.Screen name="Timer" component={TimerScreen} />
+                <Stack.Screen name="Congrats" component={CongratsScreen} />
+                <Stack.Screen name="Single Item" component={SingleItemScreen} />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }
