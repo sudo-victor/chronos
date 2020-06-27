@@ -48,7 +48,7 @@ export default function Timer() {
 
     // chronometer
     useEffect(() => {
-        if (playing && currentValue > 0 && percentage > 0) {
+        if (playing && currentValue > -1 && percentage > 0) {
             const time = setInterval(() => {
                 setProgress(validateProgress(progress + 100 / percentage));
                 setCurrentValue(currentValue - 1);
@@ -71,7 +71,7 @@ export default function Timer() {
 
     // section change
     useEffect(() => {
-        if (currentValue === 0 && progress === 100) {
+        if (currentValue === -1 && progress === 100) {
             if (sectionType === "espera") {
                 alterSection(workingTime, "tempo de trabalho");
 
@@ -106,6 +106,9 @@ export default function Timer() {
 
     // formats the current value from seconds to minutes:seconds
     const formattedCurrentValue = useMemo(() => {
+        if (currentValue < 0) {
+            return formatsSeconds(0);
+        }
         return formatsSeconds(currentValue);
     }, [currentValue]);
 
