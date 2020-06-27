@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 import formatsSeconds from "../../utils/formatsSeconds";
@@ -23,7 +24,6 @@ export default function Timer() {
     const [sets, setSets] = useState(0);
     const [workingTime, setWorkingTime] = useState(0);
     const [restingTime, setRestingTime] = useState(0);
-    const [awaitingTime, setAwaitingTime] = useState(5);
     const [progress, setProgress] = useState(0);
     const [percentage, setPercentage] = useState(0);
     const [sectionType, setSectionType] = useState("espera");
@@ -33,6 +33,9 @@ export default function Timer() {
     const route = useRoute();
     const item = route.params.item;
     const previusPage = route.params.previusPage;
+    const awaitingTime = useSelector(
+        (state) => state.settings[0]["awaitingTime"]
+    );
 
     // start values
     useEffect(() => {
