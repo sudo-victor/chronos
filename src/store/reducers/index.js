@@ -5,5 +5,4 @@ import settings from "./settings";
 
 export default combineReducers({
     configList,
-    settings,
 });

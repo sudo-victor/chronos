@@ -33,18 +33,14 @@ export default function Timer() {
     const route = useRoute();
     const item = route.params.item;
     const previusPage = route.params.previusPage;
-    const awaitingTime = useSelector(
-        (state) => state.settings[0]["awaitingTime"]
-    );
-
     // start values
     useEffect(() => {
         function loadValues() {
             setSets(item.sets);
             setWorkingTime(item.workingTime);
             setRestingTime(item.restingTime);
-            setCurrentValue(awaitingTime);
-            setPercentage(awaitingTime);
+            setCurrentValue(5);
+            setPercentage(5);
         }
 
         loadValues();
