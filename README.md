@@ -12,3 +12,26 @@ chronos
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
 </p>
+
+## Ferramentas utilizadas
+
+-   ⚛ **React Native** - Uma biblioteca JS que fornece uma maneira de criar aplicativos nativos para Android e iOS.
+-   🔄 **Redux** - Uma biblioteca JS para gerenciamento de estado do aplicativo.
+-   🔄 **Redux Persist** -Uma lib que persiste e reidrata um redux store.
+-   💅🏿 **Styled Components** - Uma biblioteca que permite escrever código CSS dentro do JavaScript
+
+## Getting started
+
+### Installation
+
+```
+git clone https://github.com/sudo-victor/checklist.git
+cd checklist
+yarn
+```
+
+### Initialization
+
+```
+yarn start
+```
