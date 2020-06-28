@@ -26,7 +26,12 @@ export const Item = styled.TouchableOpacity.attrs({ activeOpacity: 0.6 })`
 
 export const DeleteButton = styled.TouchableOpacity.attrs({
     activeOpacity: 0.7,
-})``;
+})`
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+`;
 
 export const TextItem = styled.Text`
     color: #333;
