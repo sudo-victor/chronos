@@ -13,7 +13,7 @@ chronos
   </a>
 </p>
 
-## Ferramentas utilizadas
+## Features
 
 -   ⚛ **React Native** - Uma biblioteca JS que fornece uma maneira de criar aplicativos nativos para Android e iOS.
 -   🔄 **Redux** - Uma biblioteca JS para gerenciamento de estado do aplicativo.
@@ -22,16 +22,14 @@ chronos
 
 ## Getting started
 
-### Installation
+### Instalação
 
-```
-git clone https://github.com/sudo-victor/checklist.git
-cd checklist
-yarn
-```
+ - Clone este repositório ```git clone https://github.com/sudo-victor/chronos.git```
+ - Entre na pasta ```cd chronos```
+ - Intale as dependências ```yarn```
 
-### Initialization
 
-```
-yarn start
-```
+### Inicialização
+
+ - Rode ```yarn start``` 
+ - Use um emulador ou o próprio celular, com o app Expo, para visualizar a aplicação
