@@ -2,7 +2,8 @@
 <img src="./assets/chronos-logo.svg" width="120" height="120"/>
 </p>
 
-<h1 align="center">chronos</h1>
+<p align="center"><span style="color: #8B80F9;">chronos</span></p>
 <p align="center">
-⏲ Cronometro baseado na técnica pomodoro
+⏲ Cronômetro baseado na técnica Pomodoro.
 </p>
+</hr>
