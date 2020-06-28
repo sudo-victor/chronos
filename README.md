@@ -13,14 +13,14 @@ chronos
   </a>
 </p>
 
-## Features
+## Tecnologias usadas
 
 -   ⚛ **React Native** - Uma biblioteca JS que fornece uma maneira de criar aplicativos nativos para Android e iOS.
 -   🔄 **Redux** - Uma biblioteca JS para gerenciamento de estado do aplicativo.
 -   🔄 **Redux Persist** -Uma lib que persiste e reidrata um redux store.
 -   💅🏿 **Styled Components** - Uma biblioteca que permite escrever código CSS dentro do JavaScript
 
-## Getting started
+## Começando
 
 ### Instalação
 
@@ -32,4 +32,4 @@ chronos
 ### Inicialização
 
  - Rode ```yarn start``` 
- - Use um emulador ou o próprio celular, com o app Expo, para visualizar a aplicação
+ - Use um emulador ou o próprio celular, com o app Expo, para visualizar a aplicação.
