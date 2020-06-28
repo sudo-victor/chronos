@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
@@ -18,8 +19,14 @@ export default function List() {
     const dispatch = useDispatch();
     const navigation = useNavigation();
 
+    const createAlert = (title, description) =>
+        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+            cancelable: false,
+        });
+
     function handleDestroy(id) {
         dispatch({ type: "DESTROY_CONFIG", payload: { id } });
+        createAlert("Excluiu", "A configuração foi removida da lista.");
     }
 
     function gotToSingle(item) {

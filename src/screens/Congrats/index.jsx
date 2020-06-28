@@ -17,7 +17,7 @@ export default function Congrats() {
         <Container>
             <Content>
                 <Title>Parabens!</Title>
-                <Text>Você completou todo as séries.</Text>
+                <Text>Você completou todas as séries.</Text>
 
                 <SubmitButton text="Voltar" func={handleBack} />
             </Content>

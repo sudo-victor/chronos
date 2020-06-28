@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { FontAwesome } from "@expo/vector-icons";
@@ -24,6 +25,11 @@ export default function Settings({
     const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
     const dispatch = useDispatch();
+
+    const createAlert = (title, description) =>
+        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+            cancelable: false,
+        });
 
     useEffect(() => {
         function loadPreConfig() {
@@ -67,10 +73,12 @@ export default function Settings({
             type: "UPDATE_CONFIG",
             payload: { id: idItem, sets, workingTime, restingTime },
         });
-        alert("salvo");
+
+        createAlert("Salvou", "A configuração foi editada.");
     }
 
     function handleDestroy() {
+        createAlert("Excluiu", "A configuração foi removida da lista.");
         dispatch({ type: "DESTROY_CONFIG", payload: { id: idItem } });
         navigation.navigate("List Items");
     }

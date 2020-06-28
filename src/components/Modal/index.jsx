@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Alert } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 
@@ -18,6 +19,11 @@ export default function Modal({ modalVisible, closeModal, item }) {
     const [inputValue, setInputValue] = useState("");
     const dispatch = useDispatch();
 
+    const createAlert = (title, description) =>
+        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+            cancelable: false,
+        });
+
     function handleAddConfig() {
         if (inputValue === "") {
             return;
@@ -31,7 +37,7 @@ export default function Modal({ modalVisible, closeModal, item }) {
         };
 
         dispatch({ type: "ADD_CONFIG", payload: objConfig });
-        alert("salvou");
+        createAlert("Salvou", "A configuração foi adicionada na lista.");
         setInputValue("");
         closeModal();
     }
