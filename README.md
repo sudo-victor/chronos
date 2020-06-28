@@ -1,5 +1,6 @@
 <h1 align="center">
 <img src="./assets/chronos-logo.svg" width="120" height="120"/>
+<br/>
 chronos
 </h1>
 
