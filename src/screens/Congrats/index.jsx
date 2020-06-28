@@ -1,5 +1,8 @@
 import React from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import SvgUri from "react-native-svg-uri";
+
+import trophy from "../../../assets/trophy.svg";
 
 import { Container, Content, Title, Text } from "./styles";
 import SubmitButton from "../../components/SubmitButton";
@@ -18,6 +21,8 @@ export default function Congrats() {
             <Content>
                 <Title>Parabens!</Title>
                 <Text>Você completou todas as séries.</Text>
+
+                <SvgUri width="200" height="200" source={trophy} />
 
                 <SubmitButton text="Voltar" func={handleBack} />
             </Content>
