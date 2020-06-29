@@ -38,7 +38,7 @@ export const ContainerValue = styled.View`
 
 export const Value = styled.Text`
     font-size: 64px;
-    color: #000;
+    color: #fafafa;
 `;
 
 export const Sets = styled.Text`
