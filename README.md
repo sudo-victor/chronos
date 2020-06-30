@@ -24,12 +24,11 @@ chronos
 
 ### Instalação
 
- - Clone este repositório ```git clone https://github.com/sudo-victor/chronos.git```
- - Entre na pasta ```cd chronos```
- - Intale as dependências ```yarn```
-
+-   Clone este repositório `git clone https://github.com/sudo-victor/chronos.git`
+-   Entre na pasta `cd chronos`
+-   Intale as dependências `yarn`
 
 ### Inicialização
 
- - Rode ```yarn start``` 
- - Use um emulador ou o próprio celular, com o app Expo, para visualizar a aplicação.
+-   Rode `yarn start`
+-   Use um emulador ou o próprio celular, com o app Expo, para visualizar a aplicação.
