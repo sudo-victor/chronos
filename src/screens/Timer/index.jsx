@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 import formatsSeconds from "../../utils/formatsSeconds";
+import beep from "../../../assets/audio/beep.mp3";
 
 import {
     Container,
@@ -34,6 +35,8 @@ export default function Timer() {
     const route = useRoute();
     const item = route.params.item;
     const previusPage = route.params.previusPage;
+    const soundObject = new Audio.Sound();
+
     // start values
     useEffect(() => {
         function loadValues() {
@@ -110,6 +113,11 @@ export default function Timer() {
         if (currentValue < 0) {
             return formatsSeconds(0);
         }
+
+        if (currentValue === 0) {
+            handleBeep();
+        }
+
         return formatsSeconds(currentValue);
     }, [currentValue]);
 
@@ -117,6 +125,16 @@ export default function Timer() {
 
     function handleCancel() {
         navigation.navigate(previusPage);
+    }
+
+    async function handleBeep() {
+        try {
+            await soundObject.loadAsync(beep);
+            await soundObject.playAsync();
+            // Your sound is playing!
+        } catch (error) {
+            // An error occurred!
+        }
     }
 
     return (
