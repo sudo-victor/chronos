@@ -2504,6 +2504,14 @@ expo-file-system@~8.1.0:
   dependencies:
     uuid "^3.4.0"
 
+expo-font@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-8.2.1.tgz#82f9d7f3e96a0ea4376e573b126379aa754ea807"
+  integrity sha512-hVcHAMgHm6TAMgJvdk9yWb2/KhHs4gLjPrZzW0prFBPKltGN1KK1EcL1NhjuIRs0r5k8Lve2zE8HbxTO9NRnvA==
+  dependencies:
+    fbjs "1.0.0"
+    fontfaceobserver "^2.1.0"
+
 expo-font@~8.1.0:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-8.1.1.tgz#40de629d7332887bdafae4756741f6979fc0043e"
