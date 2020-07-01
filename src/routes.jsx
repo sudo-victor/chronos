@@ -5,7 +5,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import ChronosScreen from "./screens/Chronos";
 import ListScreen from "./screens/List";
-import SettingsScreen from "./screens/Settings";
 import SingleItemScreen from "./screens/SingleItem";
 import TimerScreen from "./screens/Timer";
 import CongratsScreen from "./screens/Congrats";
@@ -21,7 +20,6 @@ function HasMenu() {
         >
             <Drawer.Screen name="Chronos" component={ChronosScreen} />
             <Drawer.Screen name="List Items" component={ListScreen} />
-            <Drawer.Screen name="Settings" component={SettingsScreen} />
         </Drawer.Navigator>
     );
 }
