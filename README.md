@@ -14,15 +14,15 @@ chronos
 </p>
 
 <p align="center">
-<img src="./assets/prints/home.jpeg" alt="home screen"/>
-<img src="./assets/prints/home-save-modal.jpeg" alt="home screen save modal"/>
-<img src="./assets/prints/drawer.jpeg" alt="drawer"/>
-<img src="./assets/prints/list.jpeg" alt="list screen"/>
-<img src="./assets/prints/single-item.jpeg" alt="signle item screen"/>
-<img src="./assets/prints/awaiting-time.jpeg" alt="timer screen awaiting time"/>
-<img src="./assets/prints/working-time.jpeg" alt="timer screen working time"/>
-<img src="./assets/prints/resting-time.jpeg" alt="timer screen resting time"/>
-<img src="./assets/prints/win.jpeg" alt="congrats screen"/>
+<img src="./assets/prints/home.jpeg" alt="home screen" width="200"/>
+<img src="./assets/prints/home-save-modal.jpeg" alt="home screen save modal" width="200"/>
+<img src="./assets/prints/drawer.jpeg" alt="drawer" width="200"/>
+<img src="./assets/prints/list.jpeg" alt="list screen" width="200"/>
+<img src="./assets/prints/single-item.jpeg" alt="signle item screen" width="200"/>
+<img src="./assets/prints/awaiting-time.jpeg" alt="timer screen awaiting time" width="200"/>
+<img src="./assets/prints/working-time.jpeg" alt="timer screen working time" width="200"/>
+<img src="./assets/prints/resting-time.jpeg" alt="timer screen resting time" width="200"/>
+<img src="./assets/prints/win.jpeg" alt="congrats screen" width="200"/>
 </p>
 
 ## Tecnologias usadas
