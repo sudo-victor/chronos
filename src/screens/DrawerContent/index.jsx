@@ -46,21 +46,6 @@ export default function DrawerContent(props) {
                         />
                     </Drawer.Section>
 
-                    <Drawer.Section>
-                        <DrawerItem
-                            icon={({ color, size }) => (
-                                <MaterialCommunityIcons
-                                    name="settings-outline"
-                                    color={color}
-                                    size={size}
-                                />
-                            )}
-                            label="Configurações"
-                            onPress={() => {
-                                props.navigation.navigate("Settings");
-                            }}
-                        />
-                    </Drawer.Section>
                 </Content>
             </DrawerContentScrollView>
         </Container>
