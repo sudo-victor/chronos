@@ -6,6 +6,12 @@ export const Container = styled.View`
     background-color: #fafafa;
 `;
 
+export const Text = styled.Text`
+    margin: 10px 0 0 20px;
+
+    color: #949494;
+`
+
 export const ListContainer = styled.ScrollView.attrs({})`
     flex: 1;
 

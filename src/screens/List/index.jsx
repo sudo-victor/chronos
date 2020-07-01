@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 
 import {
     Container,
+    Text,
     ListContainer,
     Item,
     TextItem,
@@ -20,7 +21,7 @@ export default function List() {
     const navigation = useNavigation();
 
     const createAlert = (title, description) =>
-        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+        Alert.alert(title, description, [{ text: "OK", onPress: () => { } }], {
             cancelable: false,
         });
 
@@ -38,22 +39,24 @@ export default function List() {
             <Header title="Lista" isDrawer />
 
             <ListContainer>
-                {items.map((item) => (
-                    <Item
-                        key={String(item.id)}
-                        onPress={() => gotToSingle(item)}
-                    >
-                        <TextItem>{item.name}</TextItem>
+                {items.length === 0 ?
+                    <Text>Nenhuma configuração na lista.</Text> :
+                    items.map((item) => (
+                        <Item
+                            key={String(item.id)}
+                            onPress={() => gotToSingle(item)}
+                        >
+                            <TextItem>{item.name}</TextItem>
 
-                        <DeleteButton onPress={() => handleDestroy(item.id)}>
-                            <FontAwesome
-                                name="trash-o"
-                                size={25}
-                                color="#DB5461"
-                            />
-                        </DeleteButton>
-                    </Item>
-                ))}
+                            <DeleteButton onPress={() => handleDestroy(item.id)}>
+                                <FontAwesome
+                                    name="trash-o"
+                                    size={25}
+                                    color="#DB5461"
+                                />
+                            </DeleteButton>
+                        </Item>
+                    ))}
             </ListContainer>
         </Container>
     );
