@@ -28,3 +28,8 @@ export const Text = styled.Text`
     font-weight: bold;
     color: #333;
 `;
+
+export const Trophy = styled.Image`
+    width: 200px;
+    height: 200px;
+`
