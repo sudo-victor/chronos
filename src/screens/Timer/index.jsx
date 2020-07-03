@@ -178,14 +178,14 @@ export default function Timer() {
                                 color={playing ? "#555" : "#fafafa"}
                             />
                         </Button>
-                        <TextButton>pause</TextButton>
+                        <TextButton>stop</TextButton>
                     </ContainerButton>
 
                     <ContainerButton>
                         <Button onPress={handleCancel}>
                             <Feather name="x" size={20} color="#555" />
                         </Button>
-                        <TextButton>cancelar</TextButton>
+                        <TextButton>cancel</TextButton>
                     </ContainerButton>
                 </ControlButton>
             </Content>
