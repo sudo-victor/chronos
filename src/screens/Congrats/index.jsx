@@ -18,8 +18,8 @@ export default function Congrats() {
     return (
         <Container>
             <Content>
-                <Title>Parabens!</Title>
-                <Text>Você completou todas as séries.</Text>
+                <Title>Awesome!</Title>
+                <Text>You have completed all sets.</Text>
 
                 <Trophy source={trophy} />
 

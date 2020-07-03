@@ -20,7 +20,7 @@ export default function Modal({ modalVisible, closeModal, item }) {
     const dispatch = useDispatch();
 
     const createAlert = (title, description) =>
-        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+        Alert.alert(title, description, [{ text: "OK", onPress: () => { } }], {
             cancelable: false,
         });
 
@@ -37,7 +37,7 @@ export default function Modal({ modalVisible, closeModal, item }) {
         };
 
         dispatch({ type: "ADD_CONFIG", payload: objConfig });
-        createAlert("Salvou", "A configuração foi adicionada na lista.");
+        createAlert("Save!", "The configuration has been added to the list.");
         setInputValue("");
         closeModal();
     }
@@ -63,7 +63,7 @@ export default function Modal({ modalVisible, closeModal, item }) {
                                 color="#333"
                             />
                         </BackButton>
-                        <Title>Salvar nova configuração</Title>
+                        <Title>Save new configuration</Title>
                     </Header>
 
                     <Input

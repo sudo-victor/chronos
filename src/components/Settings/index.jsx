@@ -27,7 +27,7 @@ export default function Settings({
     const dispatch = useDispatch();
 
     const createAlert = (title, description) =>
-        Alert.alert(title, description, [{ text: "OK", onPress: () => {} }], {
+        Alert.alert(title, description, [{ text: "OK", onPress: () => { } }], {
             cancelable: false,
         });
 
@@ -74,11 +74,11 @@ export default function Settings({
             payload: { id: idItem, sets, workingTime, restingTime },
         });
 
-        createAlert("Salvou", "A configuração foi editada.");
+        createAlert("Save", "The configuration has been edited.");
     }
 
     function handleDestroy() {
-        createAlert("Excluiu", "A configuração foi removida da lista.");
+        createAlert("Destroy", "The configuration has been removed from the list.");
         dispatch({ type: "DESTROY_CONFIG", payload: { id: idItem } });
         navigation.navigate("List Items");
     }
@@ -104,21 +104,21 @@ export default function Settings({
                         </Button>
                     </ButtonContainer>
                 ) : (
-                    <Button onPress={openModal}>
-                        <FontAwesome name="save" size={25} color="#FFBF00" />
-                    </Button>
-                )}
+                        <Button onPress={openModal}>
+                            <FontAwesome name="save" size={25} color="#FFBF00" />
+                        </Button>
+                    )}
             </Header>
 
-            <Field title="séries" value={sets} setValue={setSets} />
+            <Field title="sets" value={sets} setValue={setSets} />
             <Field
-                title="tempo de trabalho"
+                title="working time"
                 formattedValue={formattedWorkingTime}
                 value={workingTime}
                 setValue={setWorkingTime}
             />
             <Field
-                title="tempo de descanso"
+                title="resting time"
                 formattedValue={formattedRestingTime}
                 value={restingTime}
                 setValue={setRestingTime}

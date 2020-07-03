@@ -39,7 +39,7 @@ export default function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-                            label="Lista"
+                            label="List"
                             onPress={() => {
                                 props.navigation.navigate("List Items");
                             }}

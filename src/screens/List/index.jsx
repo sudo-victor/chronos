@@ -27,7 +27,7 @@ export default function List() {
 
     function handleDestroy(id) {
         dispatch({ type: "DESTROY_CONFIG", payload: { id } });
-        createAlert("Excluiu", "A configuração foi removida da lista.");
+        createAlert("Destroy!", "The configuration has been removed from the list.");
     }
 
     function gotToSingle(item) {
@@ -36,11 +36,11 @@ export default function List() {
 
     return (
         <Container>
-            <Header title="Lista" isDrawer />
+            <Header title="List" isDrawer />
 
             <ListContainer>
                 {items.length === 0 ?
-                    <Text>Nenhuma configuração na lista.</Text> :
+                    <Text>No settings in the list.</Text> :
                     items.map((item) => (
                         <Item
                             key={String(item.id)}
