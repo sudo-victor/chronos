@@ -28,7 +28,7 @@ export default function Timer() {
     const [restingTime, setRestingTime] = useState(0);
     const [progress, setProgress] = useState(0);
     const [percentage, setPercentage] = useState(0);
-    const [sectionType, setSectionType] = useState("espera");
+    const [sectionType, setSectionType] = useState("await");
     const [playing, setPlaying] = useState(true);
     const [currentValue, setCurrentValue] = useState(null);
     const navigation = useNavigation();
@@ -76,12 +76,12 @@ export default function Timer() {
     // section change
     useEffect(() => {
         if (currentValue === -1 && progress === 100) {
-            if (sectionType === "espera") {
-                alterSection(workingTime, "tempo de trabalho");
+            if (sectionType === "await") {
+                alterSection(workingTime, "working time");
 
                 return;
-            } else if (sectionType === "tempo de trabalho") {
-                alterSection(restingTime, "tempo de descanso");
+            } else if (sectionType === "working time") {
+                alterSection(restingTime, "resting time");
                 setSets(sets - 1);
 
                 if (sets - 1 === 0) {
@@ -89,8 +89,8 @@ export default function Timer() {
                     navigation.navigate("Congrats", { previusPage });
                 }
                 return;
-            } else if (sectionType === "tempo de descanso") {
-                alterSection(workingTime, "tempo de trabalho");
+            } else if (sectionType === "resting time") {
+                alterSection(workingTime, "working time");
 
                 return;
             }
@@ -134,6 +134,7 @@ export default function Timer() {
             // Your sound is playing!
         } catch (error) {
             // An error occurred!
+            console.log("nao foi")
         }
     }
 
@@ -160,7 +161,7 @@ export default function Timer() {
                     )}
                 </Progress>
 
-                <Sets>Séries: {sets}</Sets>
+                <Sets>sets: {sets}</Sets>
 
                 <ControlButton>
                     <ContainerButton>

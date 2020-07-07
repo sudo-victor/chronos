@@ -5,11 +5,11 @@ export const Container = styled.View`
     flex: 1;
 
     background-color: ${(props) => {
-        if (props.section === "espera") {
+        if (props.section === "await") {
             return "#FFBF00";
-        } else if (props.section === "tempo de trabalho") {
+        } else if (props.section === "working time") {
             return "#8b80f9";
-        } else if (props.section === "tempo de descanso") {
+        } else if (props.section === "resting time") {
             return "#7ac9b5";
         }
     }};

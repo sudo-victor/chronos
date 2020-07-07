@@ -23,7 +23,7 @@ export default function Congrats() {
 
                 <Trophy source={trophy} />
 
-                <SubmitButton text="Voltar" func={handleBack} />
+                <SubmitButton text="Come Back" func={handleBack} />
             </Content>
         </Container>
     );

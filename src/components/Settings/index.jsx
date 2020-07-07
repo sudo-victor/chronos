@@ -130,7 +130,7 @@ export default function Settings({
                 item={{ sets, workingTime, restingTime }}
             />
 
-            <SubmitButton text="Iniciar" func={gotToTimer} />
+            <SubmitButton text="Start" func={gotToTimer} />
         </Container>
     );
 }
