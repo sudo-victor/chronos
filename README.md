@@ -28,8 +28,8 @@ chronos
 ## Tecnologias usadas
 
 -   ⚛ **React Native** - Uma biblioteca JS que fornece uma maneira de criar aplicativos nativos para Android e iOS.
--   🔄 **Redux** - Uma biblioteca JS para gerenciamento de estado do aplicativo.
--   🔄 **Redux Persist** -Uma lib que persiste e reidrata um redux store.
+-   💾 **Redux** - Uma biblioteca JS para gerenciamento de estado do aplicativo.
+-   💾 **Redux Persist** -Uma lib que persiste e reidrata um redux store.
 -   💅🏿 **Styled Components** - Uma biblioteca que permite escrever código CSS dentro do JavaScript
 
 ## Começando
