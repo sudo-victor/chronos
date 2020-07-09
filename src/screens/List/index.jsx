@@ -40,7 +40,7 @@ export default function List() {
 
             <ListContainer>
                 {items.length === 0 ?
-                    <Text>No settings in the list.</Text> :
+                    <Text>There's no configurations in the list</Text> :
                     items.map((item) => (
                         <Item
                             key={String(item.id)}

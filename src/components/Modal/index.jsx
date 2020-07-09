@@ -69,11 +69,11 @@ export default function Modal({ modalVisible, closeModal, item }) {
                     <Input
                         value={inputValue}
                         onChangeText={(text) => setInputValue(text)}
-                        placeholder="Nome da configuração"
+                        placeholder="Configuration name"
                     />
 
                     <SaveButton onPress={handleAddConfig}>
-                        <SaveText>Salvar</SaveText>
+                        <SaveText>Save</SaveText>
                     </SaveButton>
                 </Content>
             </Container>
