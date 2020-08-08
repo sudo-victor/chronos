@@ -43,7 +43,7 @@ export const Value = styled.Text`
 
 export const Sets = styled.Text`
     font-size: 22px;
-    color: #000;
+    color: rgba(00,00,00, .5);
 `;
 
 export const ControlButton = styled.View`
@@ -74,4 +74,6 @@ export const Button = styled.TouchableOpacity.attrs({
     elevation: 3;
 `;
 
-export const TextButton = styled.Text``;
+export const TextButton = styled.Text`
+color: rgba(00,00,00, .5);
+`;
